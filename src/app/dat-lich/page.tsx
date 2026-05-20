@@ -7,35 +7,46 @@ import {
   CheckCircle,
   ArrowRight,
   ArrowLeft,
+  FileText,
+  Languages,
+  PenLine,
+  Copy,
+  Scale,
+  MoreHorizontal,
 } from "lucide-react";
+
+const SERVICE_ICONS: Record<string, React.ElementType> = {
+  "hop-dong-giao-dich": FileText,
+  "ban-dich": Languages,
+  "chung-thuc-chu-ky": PenLine,
+  "chung-thuc-ban-sao": Copy,
+  "tu-van": Scale,
+  khac: MoreHorizontal,
+};
 
 const SERVICES = [
   {
     id: "hop-dong-giao-dich",
     label: "Công chứng hợp đồng giao dịch",
-    icon: "📄",
     duration: "30 phút",
   },
   {
     id: "ban-dich",
     label: "Công chứng bản dịch",
-    icon: "🌐",
     duration: "20 phút",
   },
   {
     id: "chung-thuc-chu-ky",
     label: "Chứng thực chữ ký",
-    icon: "✍️",
     duration: "15 phút",
   },
   {
     id: "chung-thuc-ban-sao",
     label: "Chứng thực bản sao",
-    icon: "📋",
     duration: "15 phút",
   },
-  { id: "tu-van", label: "Tư vấn pháp luật", icon: "⚖️", duration: "45 phút" },
-  { id: "khac", label: "Dịch vụ khác", icon: "📌", duration: "30 phút" },
+  { id: "tu-van", label: "Tư vấn pháp luật", duration: "45 phút" },
+  { id: "khac", label: "Dịch vụ khác", duration: "30 phút" },
 ];
 
 const TIME_SLOTS = [
@@ -155,28 +166,39 @@ export default function DatLichPage() {
             </p>
 
             <div className="grid gap-3">
-              {SERVICES.map((s) => (
-                <button
-                  key={s.id}
-                  onClick={() => setService(s.id)}
-                  className={`flex items-center gap-4 p-4 rounded-xl border-2 transition-all duration-200 text-left ${
-                    service === s.id
-                      ? "border-navy-600 bg-navy-50 shadow-md"
-                      : "border-gray-100 bg-white hover:border-navy-200 hover:shadow-sm"
-                  }`}
-                >
-                  <span className="text-2xl">{s.icon}</span>
-                  <div className="flex-1">
-                    <p className="font-semibold text-navy-800">{s.label}</p>
-                    <p className="text-xs text-gray-400">
-                      Thời gian: ~{s.duration}
-                    </p>
-                  </div>
-                  {service === s.id && (
-                    <CheckCircle size={20} className="text-navy-600" />
-                  )}
-                </button>
-              ))}
+              {SERVICES.map((s) => {
+                const IconComp = SERVICE_ICONS[s.id] || FileText;
+                return (
+                  <button
+                    key={s.id}
+                    onClick={() => setService(s.id)}
+                    className={`flex items-center gap-4 p-4 rounded-xl border-2 transition-all duration-200 text-left ${
+                      service === s.id
+                        ? "border-navy-600 bg-navy-50 shadow-md"
+                        : "border-gray-100 bg-white hover:border-navy-200 hover:shadow-sm"
+                    }`}
+                  >
+                    <div
+                      className={`w-10 h-10 rounded-lg flex items-center justify-center ${
+                        service === s.id
+                          ? "bg-navy-600 text-white"
+                          : "bg-navy-50 text-navy-400"
+                      }`}
+                    >
+                      <IconComp size={20} />
+                    </div>
+                    <div className="flex-1">
+                      <p className="font-semibold text-navy-800">{s.label}</p>
+                      <p className="text-xs text-gray-400">
+                        Thời gian: ~{s.duration}
+                      </p>
+                    </div>
+                    {service === s.id && (
+                      <CheckCircle size={20} className="text-navy-600" />
+                    )}
+                  </button>
+                );
+              })}
             </div>
 
             <div className="mt-6 space-y-3">
@@ -323,11 +345,11 @@ export default function DatLichPage() {
 
             {/* Summary */}
             {selectedTime && (
-              <div className="mt-6 p-4 bg-green-50 border border-green-200 rounded-xl">
-                <h3 className="font-semibold text-green-800 mb-2">
-                  📋 Xác nhận thông tin
+              <div className="mt-6 p-4 bg-navy-50 border border-navy-200 rounded-xl">
+                <h3 className="font-semibold text-navy-800 mb-2 flex items-center gap-2">
+                  <CheckCircle size={16} /> Xác nhận thông tin
                 </h3>
-                <div className="text-sm text-green-700 space-y-1">
+                <div className="text-sm text-navy-700 space-y-1">
                   <p>
                     <span className="font-medium">Họ tên:</span> {name}
                   </p>

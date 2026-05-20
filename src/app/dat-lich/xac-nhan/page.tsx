@@ -119,7 +119,10 @@ export default function XacNhanPage() {
           <div className="px-6 py-4 space-y-3">
             <div className="flex justify-between items-center">
               <span className="text-xs text-gray-400 uppercase">Mã phiếu</span>
-              <span className="font-mono font-bold text-navy-800 text-sm">
+              <span
+                className="font-bold tracking-wider text-navy-800 text-sm"
+                style={{ fontVariantNumeric: "tabular-nums" }}
+              >
                 {booking.id}
               </span>
             </div>
@@ -216,7 +219,7 @@ export default function XacNhanPage() {
             onClick={() => router.push("/dat-lich/check-in?id=" + booking.id)}
             className="w-full bg-green-600 text-white py-3.5 rounded-xl font-semibold flex items-center justify-center gap-2 hover:bg-green-700 transition shadow-lg"
           >
-            <QrCode size={18} /> Mô phỏng Check-in (Demo)
+            <QrCode size={18} /> Check-in tại văn phòng
             <ArrowRight size={16} />
           </button>
 

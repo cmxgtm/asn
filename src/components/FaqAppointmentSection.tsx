@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { ChevronDown, Send, Calendar } from "lucide-react";
+import { ChevronDown, Send, Calendar, CheckCircle } from "lucide-react";
 import type { FaqItem } from "@/types";
 
 interface Props {
@@ -125,7 +125,9 @@ export default function FaqAppointmentSection({ faqs }: Props) {
               </h3>
               {submitted ? (
                 <div className="text-center py-8">
-                  <div className="text-4xl mb-3">✅</div>
+                  <div className="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <Send size={24} className="text-green-600" />
+                  </div>
                   <p className="text-navy-700 font-semibold">
                     Câu hỏi đã được ghi nhận!
                   </p>
@@ -194,14 +196,19 @@ export default function FaqAppointmentSection({ faqs }: Props) {
             <div className="bg-navy-gradient rounded-2xl p-7 text-white">
               {apptDone ? (
                 <div className="text-center py-10">
-                  <div className="text-5xl mb-4">🎉</div>
+                  <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <CheckCircle size={32} className="text-accent-400" />
+                  </div>
                   <p className="font-display font-bold text-xl mb-2">
                     Đặt lịch thành công!
                   </p>
                   <p className="text-white/75 text-sm mb-1">
                     Mã lịch hẹn của bạn:
                   </p>
-                  <p className="font-mono font-bold text-accent-400 text-2xl mb-4">
+                  <p
+                    className="font-bold tracking-wider text-accent-400 text-2xl mb-4"
+                    style={{ fontVariantNumeric: "tabular-nums" }}
+                  >
                     {apptDone}
                   </p>
                   <p className="text-white/70 text-sm">

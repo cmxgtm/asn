@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="vi">
       <head />
-      <body className="font-body antialiased">
+      <body className="font-body antialiased bg-[#F8FAFD]">
         {children}
         <ChatbotWidget />
       </body>

@@ -11,6 +11,10 @@ import {
   Loader2,
   ArrowLeft,
   Sparkles,
+  ClipboardList,
+  Settings,
+  Search,
+  PartyPopper,
 } from "lucide-react";
 
 interface BookingData {
@@ -24,32 +28,30 @@ interface BookingData {
   createdAt: string;
 }
 
+const STEP_ICONS = [CheckCircle2, ClipboardList, Settings, Search, Sparkles];
+
 const PROGRESS_STEPS = [
   {
     id: 1,
     label: "Đã check-in",
-    icon: "✅",
     description: "Xác nhận có mặt tại văn phòng",
   },
   {
     id: 2,
     label: "Đang tiếp nhận",
-    icon: "📋",
     description: "Nhân viên đang tiếp nhận hồ sơ",
   },
   {
     id: 3,
     label: "Đang xử lý",
-    icon: "⚙️",
     description: "Hồ sơ đang được xử lý",
   },
   {
     id: 4,
     label: "Chờ phê duyệt",
-    icon: "🔍",
     description: "Công chứng viên đang xem xét",
   },
-  { id: 5, label: "Hoàn tất", icon: "🎉", description: "Hồ sơ đã hoàn thành" },
+  { id: 5, label: "Hoàn tất", description: "Hồ sơ đã hoàn thành" },
 ];
 
 function CheckInContent() {
@@ -106,7 +108,7 @@ function CheckInContent() {
         "Số của bạn đang được gọi. Vui lòng đến quầy.",
         "Nhân viên đang xử lý hồ sơ của bạn.",
         "Hồ sơ đang chờ công chứng viên phê duyệt.",
-        "🎉 Hoàn tất! Vui lòng nhận hồ sơ tại quầy.",
+        "Hoàn tất! Vui lòng nhận hồ sơ tại quầy.",
       ];
       if (messages[step - 1]) {
         addNotification(messages[step - 1]);
@@ -185,10 +187,10 @@ function CheckInContent() {
                 onClick={startCheckin}
                 className="w-full bg-green-600 text-white py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-2 hover:bg-green-700 transition shadow-lg hover:shadow-xl"
               >
-                <Sparkles size={20} /> Mô phỏng quét QR (Demo)
+                <Sparkles size={20} /> Quét mã QR Check-in
               </button>
               <p className="text-xs text-gray-400 mt-3">
-                Nhấn nút trên để mô phỏng quá trình check-in
+                Đưa mã QR vào khung hình để check-in
               </p>
             </div>
 
@@ -296,7 +298,12 @@ function CheckInContent() {
                           ) : isCurrent ? (
                             <Loader2 size={18} className="animate-spin" />
                           ) : (
-                            <span className="text-sm">{stepItem.icon}</span>
+                            <span className="text-sm">
+                              {(() => {
+                                const Icon = STEP_ICONS[index];
+                                return <Icon size={16} />;
+                              })()}
+                            </span>
                           )}
                         </div>
                         {index < PROGRESS_STEPS.length - 1 && (
@@ -378,7 +385,9 @@ function CheckInContent() {
             {currentStep >= 5 && (
               <div className="mt-6 text-center animate-fade-up">
                 <div className="bg-green-50 border border-green-200 rounded-xl p-6">
-                  <div className="text-4xl mb-2">🎉</div>
+                  <div className="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                    <CheckCircle2 size={28} className="text-green-600" />
+                  </div>
                   <h3 className="text-lg font-bold text-green-800">
                     Hoàn tất!
                   </h3>

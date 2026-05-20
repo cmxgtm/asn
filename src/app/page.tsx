@@ -44,7 +44,7 @@ const faqs: FaqItem[] = [
     question:
       "Thông tin của người yêu cầu công chứng hiện nay trên căn cước công dân chưa cập nhật địa chỉ mới có ảnh hưởng gì đến việc công chứng, chứng thực giấy tờ, giao dịch hay không?",
     answer:
-      "Đừng lo nếu địa chỉ trên Căn cước công dân chưa cập nhật mới – theo luật hiện hành, chỉ cần bạn xuất trình giấy tờ hợp pháp, đúng quy định, thì mọi thủ tục công chứng, chứng thực, lập vi bằng đều KHÔNG BỊ ẢNH HƯỞNG.\n\n📌 Luật Công chứng 2024 & Luật Căn cước 2023 đều khẳng định:\n🔹 CCCD/VNeID có giá trị sử dụng trong các giao dịch pháp lý.\n🔹 Công dân chịu trách nhiệm về thông tin xuất trình, việc cập nhật địa chỉ sẽ do hệ thống dữ liệu dân cư thực hiện.",
+      "Đừng lo nếu địa chỉ trên Căn cước công dân chưa cập nhật mới – theo luật hiện hành, chỉ cần bạn xuất trình giấy tờ hợp pháp, đúng quy định, thì mọi thủ tục công chứng, chứng thực, lập vi bằng đều KHÔNG BỊ ẢNH HƯỞNG.\n\nLuật Công chứng 2024 & Luật Căn cước 2023 đều khẳng định:\n— CCCD/VNeID có giá trị sử dụng trong các giao dịch pháp lý.\n— Công dân chịu trách nhiệm về thông tin xuất trình, việc cập nhật địa chỉ sẽ do hệ thống dữ liệu dân cư thực hiện.",
   },
   {
     id: 7,
@@ -56,7 +56,7 @@ const faqs: FaqItem[] = [
     id: 8,
     question: "Trải nghiệm công chứng tại ASN có gì đặc biệt?",
     answer:
-      "✔ Đội ngũ giàu kinh nghiệm & hướng dẫn tận tâm\n✔ Tọa lạc tại vị trí trung tâm & cơ sở vật chất khang trang\n✔ Luôn tiên phong trong việc chuyển đổi số mạnh mẽ\n✔ Được khách hàng luôn tin tưởng & lựa chọn\n✔ Photo, in ấn hoàn toàn miễn phí\n✔ Bãi đậu xe rộng rãi & hoàn toàn miễn phí",
+      "— Đội ngũ giàu kinh nghiệm & hướng dẫn tận tâm\n— Tọa lạc tại vị trí trung tâm & cơ sở vật chất khang trang\n— Luôn tiên phong trong việc chuyển đổi số mạnh mẽ\n— Được khách hàng luôn tin tưởng & lựa chọn\n— Photo, in ấn hoàn toàn miễn phí\n— Bãi đậu xe rộng rãi & hoàn toàn miễn phí",
   },
 ];
 

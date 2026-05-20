@@ -11,7 +11,7 @@ import {
 
 export default function Footer() {
   return (
-    <footer id="lien-he" className="bg-navy-900 text-white">
+    <footer id="lien-he" className="bg-[#071529] text-white">
       {/* Map + info bar */}
       <div className="grid lg:grid-cols-2">
         <iframe
@@ -20,14 +20,17 @@ export default function Footer() {
           loading="lazy"
           title="ASN Map"
         />
-        <div className="bg-navy-800 px-8 py-10 flex flex-col justify-center">
-          <h3 className="font-display text-xl font-bold text-white mb-6">
+        <div className="bg-[#0B1F3D] px-8 py-10 flex flex-col justify-center">
+          <h3 className="font-display text-lg font-bold text-white mb-6 tracking-tight">
             Thông tin liên hệ
           </h3>
           <div className="space-y-4 text-sm">
             <div className="flex gap-3">
-              <MapPin size={16} className="text-white flex-shrink-0 mt-0.5" />
-              <div className="text-white/80">
+              <MapPin
+                size={15}
+                className="text-white/40 flex-shrink-0 mt-0.5"
+              />
+              <div className="text-white/60">
                 <p>44 Võ Văn Tần, Phường Xuân Hòa, TP.HCM</p>
                 <p className="text-white/50 text-xs mt-0.5">
                   (Địa chỉ cũ: Phường Võ Thị Sáu, Quận 3, TP.HCM)
@@ -39,50 +42,50 @@ export default function Footer() {
               <div>
                 <a
                   href="tel:02839300903"
-                  className="text-white/80 hover:text-accent-400 transition-colors block"
+                  className="text-white/60 hover:text-accent-400 transition-colors block"
                 >
                   (028) 39 300 903
                 </a>
-                <span className="text-white/80 block">
+                <span className="text-white/60 block">
                   Fax: (028) 39 300 908
                 </span>
               </div>
             </div>
             <div className="flex gap-3">
-              <Mail size={16} className="text-white flex-shrink-0" />
+              <Mail size={15} className="text-white/40 flex-shrink-0" />
               <a
                 href="mailto:info@asn.vn"
-                className="text-white/80 hover:text-accent-400 transition-colors"
+                className="text-white/60 hover:text-accent-400 transition-colors"
               >
                 info@asn.vn
               </a>
             </div>
             <div className="flex gap-3">
-              <Clock size={16} className="text-white flex-shrink-0" />
-              <span className="text-white/80">
+              <Clock size={15} className="text-white/40 flex-shrink-0" />
+              <span className="text-white/60">
                 Thứ hai – Thứ sáu: 08:00 đến 12:00 – 13:00 đến 17:00
                 &nbsp;|&nbsp; Thứ bảy: 08:00 đến 12:00
               </span>
             </div>
           </div>
-          <div className="flex gap-3 mt-6">
+          <div className="flex gap-2.5 mt-6">
             <a
               href="#"
-              className="w-9 h-9 bg-white/10 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-colors"
+              className="w-8 h-8 bg-white/[0.06] hover:bg-white/[0.12] rounded-lg flex items-center justify-center transition-colors"
             >
-              <Facebook size={16} />
+              <Facebook size={14} />
             </a>
             <a
               href="#"
-              className="w-9 h-9 bg-white/10 hover:bg-red-600 rounded-lg flex items-center justify-center transition-colors"
+              className="w-8 h-8 bg-white/[0.06] hover:bg-white/[0.12] rounded-lg flex items-center justify-center transition-colors"
             >
-              <Youtube size={16} />
+              <Youtube size={14} />
             </a>
             <a
               href="#"
-              className="w-9 h-9 bg-white/10 hover:bg-blue-400 rounded-lg flex items-center justify-center transition-colors"
+              className="w-8 h-8 bg-white/[0.06] hover:bg-white/[0.12] rounded-lg flex items-center justify-center transition-colors"
             >
-              <MessageCircle size={16} />
+              <MessageCircle size={14} />
             </a>
           </div>
         </div>
@@ -169,7 +172,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-white/10 py-5">
+      <div className="border-t border-white/[0.06] py-5">
         <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-2 text-xs text-white/40">
           <p>
             © 2024 – 2026 ASN – Văn phòng Công Chứng Châu Á. All rights

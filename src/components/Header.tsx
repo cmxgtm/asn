@@ -82,44 +82,44 @@ export default function Header() {
   const handleLogout = () => {
     clearMockSession();
     setShowUserMenu(false);
+    window.location.href = "/";
   };
 
   return (
     <>
       <div className="sticky top-0 z-50">
         {/* Topbar */}
-        <div className="bg-[#2651A6] text-white text-xs py-2 px-4 hidden md:flex items-center justify-between">
+        <div className="bg-[#0B1F3D] text-white/70 text-[11px] tracking-wide py-2 px-4 hidden md:flex items-center justify-between">
           <div className="flex items-center gap-6">
-            <span className="flex items-center gap-1">
+            <span className="flex items-center gap-1.5">
               <Image
                 src={PhoneIcon}
                 alt=""
-                width={12}
-                height={12}
-                className="inline-block"
+                width={11}
+                height={11}
+                className="inline-block opacity-60"
               />{" "}
               (028) 39 300 903 &nbsp;|&nbsp; Fax: (028) 39 300 908
             </span>
-            <span className="flex items-center gap-1">
+            <span className="flex items-center gap-1.5">
               <Image
                 src={ClockIcon}
                 alt=""
-                width={12}
-                height={12}
-                className="inline-block"
+                width={11}
+                height={11}
+                className="inline-block opacity-60"
               />{" "}
-              Thứ hai – Thứ sáu: 08:00 đến 12:00 – 13:00 đến 17:00 &nbsp;|&nbsp;
-              Thứ bảy: 08:00 đến 12:00
+              T2–T6: 08:00–12:00, 13:00–17:00 &nbsp;|&nbsp; T7: 08:00–12:00
             </span>
           </div>
-          <div className="flex items-center gap-4 text-navy-200">
-            <a href="#" className="hover:text-accent-400 transition-colors">
+          <div className="flex items-center gap-5">
+            <a href="#" className="hover:text-white transition-colors">
               Facebook
             </a>
-            <a href="#" className="hover:text-accent-400 transition-colors">
+            <a href="#" className="hover:text-white transition-colors">
               Zalo
             </a>
-            <a href="#" className="hover:text-accent-400 transition-colors">
+            <a href="#" className="hover:text-white transition-colors">
               YouTube
             </a>
           </div>
@@ -127,14 +127,15 @@ export default function Header() {
 
         {/* Main header */}
         <header
-          className={`transition-all duration-300 ${
-            scrolled ? "shadow-2xl shadow-navy-900/30" : ""
+          className={`transition-all duration-500 relative ${
+            scrolled ? "shadow-xl shadow-navy-900/20" : ""
           }`}
           style={{
-            background: "linear-gradient(to right, #2651A6, #0477BF, #049DD9)",
+            background:
+              "linear-gradient(135deg, #0F2847 0%, #1A4B8C 50%, #2D7DD2 100%)",
           }}
         >
-          <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
+          <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-[68px]">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3 flex-shrink-0">
               <Image
@@ -148,7 +149,7 @@ export default function Header() {
             </Link>
 
             {/* Desktop Nav */}
-            <nav className="hidden lg:flex items-center gap-1">
+            <nav className="hidden lg:flex items-center gap-0.5">
               {navItems.map((item) => {
                 const NavTag = item.href.startsWith("/") ? Link : "a";
                 return (
@@ -160,19 +161,19 @@ export default function Header() {
                   >
                     <NavTag
                       href={item.href}
-                      className="flex items-center gap-1 px-3 py-2 text-white/90 hover:text-white text-sm font-medium rounded-md hover:bg-white/10 transition-all"
+                      className="flex items-center gap-1 px-3.5 py-2 text-white/85 hover:text-white text-[13px] font-medium tracking-wide rounded-md hover:bg-white/[0.08] transition-all duration-200"
                     >
                       {item.label}
                       {item.children && (
                         <ChevronDown
-                          size={14}
-                          className="opacity-70 group-hover:rotate-180 transition-transform duration-200"
+                          size={13}
+                          className="opacity-50 group-hover:opacity-80 group-hover:rotate-180 transition-all duration-200"
                         />
                       )}
                     </NavTag>
                     {item.children && openDropdown === item.label && (
-                      <div className="absolute top-full left-0 pt-1 w-64 z-50">
-                        <div className="bg-white rounded-lg shadow-2xl border border-navy-100 overflow-hidden animate-fade-up">
+                      <div className="absolute top-full left-0 pt-2 w-64 z-50">
+                        <div className="bg-white rounded-lg shadow-2xl shadow-navy-900/15 border border-navy-100 overflow-hidden animate-fade-up">
                           {item.children.map((child) => {
                             const ChildTag = child.href.startsWith("/")
                               ? Link
@@ -181,7 +182,7 @@ export default function Header() {
                               <ChildTag
                                 key={child.label}
                                 href={child.href}
-                                className="block px-4 py-3 text-navy-700 text-sm hover:bg-navy-50 hover:text-navy-600 border-b border-gray-50 last:border-0 transition-colors"
+                                className="block px-4 py-3 text-navy-800 text-sm hover:bg-navy-50 hover:text-navy-500 border-b border-navy-50 last:border-0 transition-colors"
                               >
                                 {child.label}
                               </ChildTag>
@@ -201,23 +202,23 @@ export default function Header() {
                 <div className="relative">
                   <button
                     onClick={() => setShowUserMenu(!showUserMenu)}
-                    className="flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-3 py-2 rounded-full text-sm font-medium transition-all"
+                    className="flex items-center gap-2.5 bg-white/[0.08] hover:bg-white/[0.14] text-white px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 border border-white/[0.06]"
                   >
-                    <div className="w-7 h-7 bg-accent-400 rounded-full flex items-center justify-center text-navy-800 font-bold text-xs">
+                    <div className="w-7 h-7 bg-accent-400 rounded-md flex items-center justify-center text-navy-900 font-bold text-xs">
                       {user.citizen.name[0]}
                     </div>
-                    <span className="hidden md:inline">
+                    <span className="hidden md:inline text-[13px]">
                       {user.citizen.name}
                     </span>
-                    <ChevronDown size={14} />
+                    <ChevronDown size={13} className="opacity-60" />
                   </button>
                   {showUserMenu && (
-                    <div className="absolute right-0 top-full mt-2 w-52 bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden z-50">
-                      <div className="px-4 py-3 border-b border-gray-100 bg-navy-50">
-                        <p className="font-semibold text-navy-700 text-sm">
+                    <div className="absolute right-0 top-full mt-2 w-56 bg-white rounded-lg shadow-2xl shadow-navy-900/15 border border-navy-100 overflow-hidden z-50 animate-fade-up">
+                      <div className="px-4 py-3.5 border-b border-navy-50 bg-navy-50/50">
+                        <p className="font-semibold text-navy-800 text-sm">
                           {user.citizen.name}
                         </p>
-                        <p className="text-xs text-gray-500">
+                        <p className="text-xs text-navy-400 mt-0.5">
                           {user.citizen.email}
                         </p>
                       </div>
@@ -225,29 +226,31 @@ export default function Header() {
                         href="/dashboard"
                         className="flex items-center gap-3 px-4 py-3 text-sm text-navy-700 hover:bg-navy-50 transition-colors"
                       >
-                        <User size={15} /> Thông tin cá nhân
+                        <User size={15} className="text-navy-400" /> Thông tin
+                        cá nhân
                       </Link>
                       <Link
                         href="/ho-so"
                         className="flex items-center gap-3 px-4 py-3 text-sm text-navy-700 hover:bg-navy-50 transition-colors"
                       >
-                        <Archive size={15} /> Hồ sơ
+                        <Archive size={15} className="text-navy-400" /> Hồ sơ
                       </Link>
                       <Link
                         href="/dashboard#khieu-nai"
                         className="flex items-center gap-3 px-4 py-3 text-sm text-navy-700 hover:bg-navy-50 transition-colors"
                       >
-                        <Bell size={15} /> Khiếu nại
+                        <Bell size={15} className="text-navy-400" /> Khiếu nại
                       </Link>
                       <Link
                         href="/dat-lich"
                         className="flex items-center gap-3 px-4 py-3 text-sm text-navy-700 hover:bg-navy-50 transition-colors"
                       >
-                        <Calendar size={15} /> Lịch hẹn của tôi
+                        <Calendar size={15} className="text-navy-400" /> Lịch
+                        hẹn của tôi
                       </Link>
                       <button
                         onClick={handleLogout}
-                        className="flex items-center gap-3 px-4 py-3 text-sm text-red-600 hover:bg-red-50 transition-colors w-full border-t border-gray-100"
+                        className="flex items-center gap-3 px-4 py-3 text-sm text-red-600 hover:bg-red-50 transition-colors w-full border-t border-navy-50"
                       >
                         <LogOut size={15} /> Đăng xuất
                       </button>
@@ -257,9 +260,9 @@ export default function Header() {
               ) : (
                 <Link
                   href="/login"
-                  className="bg-white hover:bg-white/90 text-navy-700 px-4 py-2 rounded-full text-sm font-semibold transition-all shadow-lg hidden md:flex items-center gap-2"
+                  className="bg-white hover:bg-white/95 text-navy-800 px-5 py-2 rounded-lg text-[13px] font-semibold transition-all shadow-lg shadow-navy-900/10 hidden md:flex items-center gap-2 tracking-wide"
                 >
-                  <User size={14} /> Đăng ký / Đăng nhập
+                  <User size={14} /> Đăng nhập
                 </Link>
               )}
 
@@ -275,14 +278,14 @@ export default function Header() {
 
           {/* Mobile nav */}
           {mobileOpen && (
-            <div className="lg:hidden bg-navy-800 border-t border-white/10 px-4 py-3">
+            <div className="lg:hidden bg-navy-800 border-t border-white/5 px-4 py-3">
               {navItems.map((item) => {
                 const MobileNavTag = item.href.startsWith("/") ? Link : "a";
                 return (
                   <div key={item.label}>
                     <MobileNavTag
                       href={item.href}
-                      className="block py-3 text-white/90 text-sm font-medium border-b border-white/10"
+                      className="block py-3 text-white/85 text-sm font-medium border-b border-white/5"
                       onClick={() => setMobileOpen(false)}
                     >
                       {item.label}
@@ -297,7 +300,7 @@ export default function Header() {
                             <MobileChildTag
                               key={child.label}
                               href={child.href}
-                              className="block py-2 text-white/60 text-xs border-b border-white/5"
+                              className="block py-2 text-white/50 text-xs border-b border-white/[0.03]"
                               onClick={() => setMobileOpen(false)}
                             >
                               {child.label}
@@ -313,9 +316,9 @@ export default function Header() {
                 <Link
                   href="/login"
                   onClick={() => setMobileOpen(false)}
-                  className="mt-3 w-full bg-white text-navy-700 py-2.5 rounded-lg text-sm font-semibold hover:bg-white/90 transition-all"
+                  className="mt-3 block text-center w-full bg-white text-navy-800 py-2.5 rounded-lg text-sm font-semibold hover:bg-white/90 transition-all"
                 >
-                  Đăng ký / Đăng nhập
+                  Đăng nhập
                 </Link>
               )}
             </div>

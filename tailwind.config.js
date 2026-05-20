@@ -5,16 +5,16 @@ module.exports = {
     extend: {
       colors: {
         navy: {
-          50: "#eef2ff",
-          100: "#dce8ff",
-          200: "#bad1ff",
-          300: "#7aaeff",
-          400: "#3b82f6",
-          500: "#1d5ecc",
-          600: "#1a3a6b",
-          700: "#152e58",
-          800: "#0f2040",
-          900: "#091428",
+          50: "#EBF1F8",
+          100: "#D6E3F1",
+          200: "#B0CAE5",
+          300: "#7AAED6",
+          400: "#3B82C6",
+          500: "#1A4B8C",
+          600: "#153D72",
+          700: "#0F2847",
+          800: "#0B1F3D",
+          900: "#071529",
         },
         accent: {
           400: "#38bdf8",
@@ -22,8 +22,8 @@ module.exports = {
         },
       },
       fontFamily: {
-        display: ["var(--font-zalando)", "sans-serif"],
-        body: ["var(--font-zalando)", "sans-serif"],
+        display: ["'ZalandoSans'", "system-ui", "sans-serif"],
+        body: ["'ZalandoSans'", "system-ui", "sans-serif"],
       },
       animation: {
         "slide-in": "slideIn 0.6s ease-out forwards",
@@ -36,7 +36,7 @@ module.exports = {
           "100%": { opacity: "1", transform: "translateX(0)" },
         },
         fadeUp: {
-          "0%": { opacity: "0", transform: "translateY(20px)" },
+          "0%": { opacity: "0", transform: "translateY(16px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
         marquee: {

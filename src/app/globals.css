@@ -19,13 +19,18 @@
 @tailwind utilities;
 
 :root {
-  --font-zalando: 'ZalandoSans', sans-serif;
-  --navy-900: #091428;
-  --navy-800: #0f2040;
-  --navy-700: #152e58;
-  --navy-600: #1a3a6b;
-  --navy-500: #1d5ecc;
-  --accent: #38bdf8;
+  --ink: #0B1F3D;
+  --navy-deep: #0F2847;
+  --navy-core: #1A4B8C;
+  --navy-mid: #2D6BC4;
+  --blue-bright: #2D7DD2;
+  --blue-accent: #38BDF8;
+  --blue-wash: #EBF1F8;
+  --blue-mist: #F4F7FB;
+  --blue-ghost: #F8FAFD;
+  --slate: #475569;
+  --slate-light: #64748B;
+  --rule: rgba(26, 75, 140, 0.1);
 }
 
 * {
@@ -40,56 +45,102 @@ html {
 }
 
 body {
-  font-family: var(--font-zalando);
-  color: #1a1a2e;
-  background: #ffffff;
+  font-family: 'ZalandoSans', system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--blue-ghost);
   overflow-x: hidden;
   max-width: 100vw;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.01em;
 }
 
 /* Scrollbar */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #f1f5f9; }
-::-webkit-scrollbar-thumb { background: var(--navy-600); border-radius: 3px; }
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--blue-wash); }
+::-webkit-scrollbar-thumb { background: var(--navy-core); border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { background: var(--navy-mid); }
+
+/* Selection */
+::selection {
+  background: rgba(45, 125, 210, 0.2);
+  color: var(--ink);
+}
 
 /* Ticker tape */
-.ticker-wrap {
-  overflow: hidden;
-  white-space: nowrap;
-}
-.ticker-content {
-  display: inline-flex;
-  animation: marquee 40s linear infinite;
-}
+.ticker-wrap { overflow: hidden; white-space: nowrap; }
+.ticker-content { display: inline-flex; animation: marquee 40s linear infinite; }
 
 /* Carousel */
 .carousel-container { overflow: hidden; }
 
-/* News card hover */
-.news-card { transition: transform 0.25s ease, box-shadow 0.25s ease; }
-.news-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(26,58,107,0.14); }
+/* News card */
+.news-card {
+  transition: transform 0.35s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.35s cubic-bezier(0.2, 0, 0, 1);
+}
+.news-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 48px rgba(11, 31, 61, 0.08), 0 2px 8px rgba(11, 31, 61, 0.04);
+}
 
-/* Section heading line */
+/* Section heading */
 .section-heading::after {
   content: '';
   display: block;
-  width: 48px;
-  height: 3px;
-  background: var(--accent);
-  margin-top: 10px;
+  width: 32px;
+  height: 2px;
+  background: var(--blue-accent);
+  margin-top: 12px;
 }
 
 /* FAQ accordion */
-.faq-answer {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.35s ease, padding 0.35s ease;
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.35s ease; }
+.faq-answer.open { max-height: 400px; }
+
+/* Grain overlay */
+.grain::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.025;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
 }
-.faq-answer.open {
-  max-height: 400px;
+
+/* Fine rule */
+.rule {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--rule), transparent);
+}
+
+/* Refined card */
+.card {
+  background: white;
+  border: 1px solid rgba(26, 75, 140, 0.08);
+  border-radius: 10px;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.card:hover {
+  box-shadow: 0 4px 24px rgba(11, 31, 61, 0.06);
+  border-color: rgba(26, 75, 140, 0.15);
 }
 
 @layer utilities {
   .text-shadow { text-shadow: 0 2px 8px rgba(0,0,0,0.4); }
-  .bg-navy-gradient { background: linear-gradient(135deg, #0f2040 0%, #1a3a6b 60%, #1d5ecc 100%); }
+  .bg-navy-gradient { background: linear-gradient(135deg, #0B1F3D 0%, #1A4B8C 60%, #2D7DD2 100%); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes marquee {
+  from { transform: translateX(0%); }
+  to { transform: translateX(-50%); }
 }
