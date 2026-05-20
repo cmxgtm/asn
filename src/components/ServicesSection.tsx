@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect, useCallback } from "react";
+import Link from "next/link";
 import {
   FileText,
   Stamp,
@@ -103,13 +104,12 @@ export default function ServicesSection() {
                 định pháp luật với quy trình chuyên nghiệp, nhanh chóng.
               </p>
               <div className="flex flex-col gap-3">
-                <a
+                <Link
                   href="/dat-lich"
                   className="bg-gradient-to-r from-navy-500 to-navy-400 hover:from-navy-600 hover:to-navy-500 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all flex items-center justify-center gap-2"
-                  
                 >
                   Đặt lịch hẹn
-                </a>
+                </Link>
               </div>
             </div>
           </div>

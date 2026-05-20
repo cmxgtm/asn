@@ -31,7 +31,8 @@ export default function XacNhanPage() {
     setBooking(parsed);
 
     // Generate QR code
-    const checkinUrl = `${window.location.origin}/dat-lich/check-in?id=${parsed.id}`;
+    const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+    const checkinUrl = `${window.location.origin}${basePath}/dat-lich/check-in?id=${parsed.id}`;
     QRCode.toDataURL(checkinUrl, {
       width: 200,
       margin: 2,
