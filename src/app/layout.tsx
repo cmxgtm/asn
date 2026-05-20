@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ChatbotWidget from "@/components/ChatbotWidget";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -16,7 +17,10 @@ export default function RootLayout({
   return (
     <html lang="vi">
       <head />
-      <body className="font-body antialiased">{children}</body>
+      <body className="font-body antialiased">
+        {children}
+        <ChatbotWidget />
+      </body>
     </html>
   );
 }

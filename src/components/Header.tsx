@@ -49,7 +49,7 @@ const navItems = [
   { label: "Liên hệ", href: "#lien-he" },
 ];
 
-// Mock auth state for POC
+// Temporary local auth state
 type AuthUser = { name: string; email: string } | null;
 
 export default function Header() {
