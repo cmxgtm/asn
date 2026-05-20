@@ -36,7 +36,7 @@ export default function FaqAccordion({ faqs }: Props) {
               open === idx ? "pb-4" : ""
             }`}
           >
-            <p className="text-gray-600 text-sm leading-relaxed">
+            <p className="text-gray-600 text-sm leading-relaxed whitespace-pre-line">
               {faq.answer}
             </p>
           </div>

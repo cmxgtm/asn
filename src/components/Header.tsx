@@ -11,6 +11,8 @@ import {
   Calendar,
   Bell,
 } from "lucide-react";
+import PhoneIcon from "@/assets/phone.svg";
+import ClockIcon from "@/assets/clock.svg";
 
 const navItems = [
   {
@@ -83,17 +85,36 @@ export default function Header() {
         {/* Topbar */}
         <div className="bg-[#2651A6] text-white text-xs py-2 px-4 hidden md:flex items-center justify-between">
           <div className="flex items-center gap-6">
-            <span>📞 079 992 1998 &nbsp;|&nbsp; 028 39 300 903</span>
-            <span>🕐 T2–T6: 8:00–17:00 &nbsp;|&nbsp; T7: 8:00–12:00</span>
+            <span className="flex items-center gap-1">
+              <Image
+                src={PhoneIcon}
+                alt=""
+                width={12}
+                height={12}
+                className="inline-block"
+              />{" "}
+              (028) 39 300 903 &nbsp;|&nbsp; Fax: (028) 39 300 908
+            </span>
+            <span className="flex items-center gap-1">
+              <Image
+                src={ClockIcon}
+                alt=""
+                width={12}
+                height={12}
+                className="inline-block"
+              />{" "}
+              Thứ hai – Thứ sáu: 08:00 đến 12:00 – 13:00 đến 17:00 &nbsp;|&nbsp;
+              Thứ bảy: 08:00 đến 12:00
+            </span>
           </div>
           <div className="flex items-center gap-4 text-navy-200">
-            <a href="#" className="hover:text-gold-400 transition-colors">
+            <a href="#" className="hover:text-accent-400 transition-colors">
               Facebook
             </a>
-            <a href="#" className="hover:text-gold-400 transition-colors">
+            <a href="#" className="hover:text-accent-400 transition-colors">
               Zalo
             </a>
-            <a href="#" className="hover:text-gold-400 transition-colors">
+            <a href="#" className="hover:text-accent-400 transition-colors">
               YouTube
             </a>
           </div>
@@ -116,7 +137,7 @@ export default function Header() {
                 alt="ASN – Công Chứng Châu Á"
                 width={140}
                 height={60}
-                className="h-10 w-auto object-contain"
+                className="h-10 w-auto object-contain brightness-0 invert"
                 unoptimized
               />
             </Link>
@@ -169,7 +190,7 @@ export default function Header() {
                     onClick={() => setShowUserMenu(!showUserMenu)}
                     className="flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-3 py-2 rounded-full text-sm font-medium transition-all"
                   >
-                    <div className="w-7 h-7 bg-gold-400 rounded-full flex items-center justify-center text-navy-800 font-bold text-xs">
+                    <div className="w-7 h-7 bg-accent-400 rounded-full flex items-center justify-center text-navy-800 font-bold text-xs">
                       {user.name[0]}
                     </div>
                     <span className="hidden md:inline">{user.name}</span>
@@ -213,7 +234,7 @@ export default function Header() {
               ) : (
                 <button
                   onClick={() => setShowLoginModal(true)}
-                  className="bg-gold-400 hover:bg-gold-500 text-navy-800 px-4 py-2 rounded-full text-sm font-semibold transition-all shadow-lg hover:shadow-gold-400/30 hidden md:flex items-center gap-2"
+                  className="bg-white hover:bg-white/90 text-navy-700 px-4 py-2 rounded-full text-sm font-semibold transition-all shadow-lg hidden md:flex items-center gap-2"
                 >
                   <User size={14} /> Đăng ký / Đăng nhập
                 </button>
@@ -263,7 +284,7 @@ export default function Header() {
                     setShowLoginModal(true);
                     setMobileOpen(false);
                   }}
-                  className="mt-3 w-full bg-gold-400 text-navy-800 py-2.5 rounded-lg text-sm font-semibold"
+                  className="mt-3 w-full bg-white text-navy-700 py-2.5 rounded-lg text-sm font-semibold hover:bg-white/90 transition-all"
                 >
                   Đăng ký / Đăng nhập
                 </button>

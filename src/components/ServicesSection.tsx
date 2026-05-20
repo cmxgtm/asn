@@ -95,10 +95,7 @@ export default function ServicesSection() {
           {/* Left sidebar - 30% */}
           <div className="lg:w-[30%] flex-shrink-0">
             <div className="lg:sticky lg:top-24">
-              <p className="text-navy-500 text-sm font-semibold tracking-wider uppercase mb-2">
-                Dịch vụ của chúng tôi
-              </p>
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-navy-700 section-heading mb-6">
+              <h2 className="font-display text-2xl md:text-3xl font-bold text-navy-700 section-heading mb-6 whitespace-nowrap">
                 Các dịch vụ công chứng
               </h2>
               <p className="text-gray-600 text-sm leading-relaxed mb-8">
@@ -107,14 +104,9 @@ export default function ServicesSection() {
               </p>
               <div className="flex flex-col gap-3">
                 <a
-                  href="#nop-ho-so"
-                  className="bg-navy-600 hover:bg-navy-700 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all flex items-center justify-center gap-2 shadow-lg shadow-navy-600/20"
-                >
-                  Nộp hồ sơ <ArrowRight size={15} />
-                </a>
-                <a
                   href="/dat-lich"
-                  className="bg-gold-400 hover:bg-gold-500 text-navy-900 px-5 py-2.5 rounded-full text-sm font-semibold transition-all flex items-center justify-center gap-2"
+                  className="bg-gradient-to-r from-navy-500 to-navy-400 hover:from-navy-600 hover:to-navy-500 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all flex items-center justify-center gap-2"
+                  
                 >
                   Đặt lịch hẹn
                 </a>

@@ -39,6 +39,25 @@ const faqs: FaqItem[] = [
     answer:
       "Có. Bạn có thể đặt lịch hẹn trực tiếp qua website này, gọi hotline 079 992 1998 hoặc 028 39 300 903, hoặc nhắn tin qua Zalo. Chúng tôi xác nhận lịch hẹn trong vòng 30 phút trong giờ làm việc.",
   },
+  {
+    id: 6,
+    question:
+      "Thông tin của người yêu cầu công chứng hiện nay trên căn cước công dân chưa cập nhật địa chỉ mới có ảnh hưởng gì đến việc công chứng, chứng thực giấy tờ, giao dịch hay không?",
+    answer:
+      "Đừng lo nếu địa chỉ trên Căn cước công dân chưa cập nhật mới – theo luật hiện hành, chỉ cần bạn xuất trình giấy tờ hợp pháp, đúng quy định, thì mọi thủ tục công chứng, chứng thực, lập vi bằng đều KHÔNG BỊ ẢNH HƯỞNG.\n\n📌 Luật Công chứng 2024 & Luật Căn cước 2023 đều khẳng định:\n🔹 CCCD/VNeID có giá trị sử dụng trong các giao dịch pháp lý.\n🔹 Công dân chịu trách nhiệm về thông tin xuất trình, việc cập nhật địa chỉ sẽ do hệ thống dữ liệu dân cư thực hiện.",
+  },
+  {
+    id: 7,
+    question: "Các thủ tục công chứng tại ASN diễn ra như thế nào?",
+    answer:
+      "Hướng dẫn công chứng nhanh chóng - tiện lợi tại ASN:\n1. Hướng dẫn công chứng\n2. Tiếp nhận, xử lý & ký hồ sơ công chứng\n3. Tính phí & thu phí\n4. Đóng dấu & trả hồ sơ công chứng",
+  },
+  {
+    id: 8,
+    question: "Trải nghiệm công chứng tại ASN có gì đặc biệt?",
+    answer:
+      "✔ Đội ngũ giàu kinh nghiệm & hướng dẫn tận tâm\n✔ Tọa lạc tại vị trí trung tâm & cơ sở vật chất khang trang\n✔ Luôn tiên phong trong việc chuyển đổi số mạnh mẽ\n✔ Được khách hàng luôn tin tưởng & lựa chọn\n✔ Photo, in ấn hoàn toàn miễn phí\n✔ Bãi đậu xe rộng rãi & hoàn toàn miễn phí",
+  },
 ];
 
 export default function HomePage() {

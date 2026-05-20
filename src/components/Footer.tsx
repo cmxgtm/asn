@@ -16,7 +16,7 @@ export default function Footer() {
       <div className="grid lg:grid-cols-2">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.435907224764!2d106.68917891474415!3d10.777887662114006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f3a64061603%3A0xe1516a2d2af40d2a!2zVsSDbiBwaMOybmcgQ8O0bmcgQ2jhu6luZyBDaMOidSDDgQ!5e0!3m2!1svi!2s!4v1548733640966"
-          className="w-full h-full min-h-[16rem] grayscale"
+          className="w-full h-full min-h-[16rem]"
           loading="lazy"
           title="ASN Map"
         />
@@ -26,44 +26,42 @@ export default function Footer() {
           </h3>
           <div className="space-y-4 text-sm">
             <div className="flex gap-3">
-              <MapPin
-                size={16}
-                className="text-gold-400 flex-shrink-0 mt-0.5"
-              />
-              <span className="text-white/80">
-                2 Nguyễn Thị Minh Khai, Phường Đa Kao, Quận 1, TP. Hồ Chí Minh
-              </span>
-            </div>
-            <div className="flex gap-3">
-              <Phone size={16} className="text-gold-400 flex-shrink-0" />
-              <div>
-                <a
-                  href="tel:0799921998"
-                  className="text-white/80 hover:text-gold-400 transition-colors block"
-                >
-                  079 992 1998
-                </a>
-                <a
-                  href="tel:02839300903"
-                  className="text-white/80 hover:text-gold-400 transition-colors block"
-                >
-                  028 39 300 903
-                </a>
+              <MapPin size={16} className="text-white flex-shrink-0 mt-0.5" />
+              <div className="text-white/80">
+                <p>44 Võ Văn Tần, Phường Xuân Hòa, TP.HCM</p>
+                <p className="text-white/50 text-xs mt-0.5">
+                  (Địa chỉ cũ: Phường Võ Thị Sáu, Quận 3, TP.HCM)
+                </p>
               </div>
             </div>
             <div className="flex gap-3">
-              <Mail size={16} className="text-gold-400 flex-shrink-0" />
+              <Phone size={16} className="text-white flex-shrink-0" />
+              <div>
+                <a
+                  href="tel:02839300903"
+                  className="text-white/80 hover:text-accent-400 transition-colors block"
+                >
+                  (028) 39 300 903
+                </a>
+                <span className="text-white/80 block">
+                  Fax: (028) 39 300 908
+                </span>
+              </div>
+            </div>
+            <div className="flex gap-3">
+              <Mail size={16} className="text-white flex-shrink-0" />
               <a
-                href="mailto:congchungchaua@gmail.com"
-                className="text-white/80 hover:text-gold-400 transition-colors"
+                href="mailto:info@asn.vn"
+                className="text-white/80 hover:text-accent-400 transition-colors"
               >
-                congchungchaua@gmail.com
+                info@asn.vn
               </a>
             </div>
             <div className="flex gap-3">
-              <Clock size={16} className="text-gold-400 flex-shrink-0" />
+              <Clock size={16} className="text-white flex-shrink-0" />
               <span className="text-white/80">
-                T2–T6: 8:00–17:00 &nbsp;|&nbsp; T7: 8:00–12:00
+                Thứ hai – Thứ sáu: 08:00 đến 12:00 – 13:00 đến 17:00
+                &nbsp;|&nbsp; Thứ bảy: 08:00 đến 12:00
               </span>
             </div>
           </div>
@@ -122,7 +120,7 @@ export default function Footer() {
               <li key={s}>
                 <a
                   href="#dich-vu"
-                  className="hover:text-gold-400 transition-colors"
+                  className="hover:text-accent-400 transition-colors"
                 >
                   {s}
                 </a>
@@ -142,7 +140,7 @@ export default function Footer() {
               "Đặt lịch hẹn",
             ].map((s) => (
               <li key={s}>
-                <a href="#" className="hover:text-gold-400 transition-colors">
+                <a href="#" className="hover:text-accent-400 transition-colors">
                   {s}
                 </a>
               </li>
@@ -155,13 +153,13 @@ export default function Footer() {
           <ul className="space-y-2 text-xs text-white/60">
             {[
               "Giới thiệu văn phòng",
-              "Đội ngũ công chứng viên",
+              "Công chứng viên",
               "Đối tác ngân hàng",
               "Tin tức",
               "Tuyển dụng",
             ].map((s) => (
               <li key={s}>
-                <a href="#" className="hover:text-gold-400 transition-colors">
+                <a href="#" className="hover:text-accent-400 transition-colors">
                   {s}
                 </a>
               </li>
