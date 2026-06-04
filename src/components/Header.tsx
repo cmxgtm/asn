@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import logoImg from "@/assets/img/logo.png";
 import {
   Menu,
   X,
