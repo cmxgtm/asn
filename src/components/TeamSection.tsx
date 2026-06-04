@@ -2,50 +2,53 @@
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
+import photoLuyen from "@/assets/img/A-Luyen.jpg";
+import photoCuong from "@/assets/img/A-Cuong.jpg";
+import photoHoaMy from "@/assets/img/hoa-my.jpg";
+import photoLy from "@/assets/img/Hinh_Ms-LY.jpg";
+import photoTuan from "@/assets/img/CCV-Nguyen-Minh-Tuan.jpg";
+import photoNgoc from "@/assets/img/CCV-Luong-Thi-Nguyen-Ngoc.jpg";
 
 const team = [
   {
     name: "Nguyễn Tiến Luyện",
     role: "Công chứng viên – Trưởng văn phòng",
-    photo: "https://congchungchaua.vn/wp-content/uploads/2018/09/A-Luyen.jpg",
+    photo: photoLuyen,
     experience: "15+ năm kinh nghiệm",
     href: "#",
   },
   {
     name: "Hà Đức Cường",
     role: "Công chứng viên",
-    photo: "https://congchungchaua.vn/wp-content/uploads/2018/09/A-Cuong.jpg",
+    photo: photoCuong,
     experience: "12+ năm kinh nghiệm",
     href: "#",
   },
   {
     name: "Nguyễn Thị Hoa Mỹ",
     role: "Công chứng viên",
-    photo: "https://congchungchaua.vn/wp-content/uploads/2019/09/hoa-my.jpg",
+    photo: photoHoaMy,
     experience: "10+ năm kinh nghiệm",
     href: "#",
   },
   {
     name: "Nguyễn Thị Lý",
     role: "Công chứng viên",
-    photo:
-      "https://congchungchaua.vn/wp-content/uploads/2019/09/Hinh_Ms-LY.jpg",
+    photo: photoLy,
     experience: "8+ năm kinh nghiệm",
     href: "#",
   },
   {
     name: "Nguyễn Minh Tuấn",
     role: "Công chứng viên",
-    photo:
-      "https://congchungchaua.vn/wp-content/uploads/2018/09/CCV-Nguyen-Minh-Tuan.jpg",
+    photo: photoTuan,
     experience: "8+ năm kinh nghiệm",
     href: "#",
   },
   {
     name: "Lương Thị Nguyên Ngọc",
     role: "Công chứng viên",
-    photo:
-      "https://congchungchaua.vn/wp-content/uploads/2018/09/CCV-Luong-Thi-Nguyen-Ngoc.jpg",
+    photo: photoNgoc,
     experience: "7+ năm kinh nghiệm",
     href: "#",
   },

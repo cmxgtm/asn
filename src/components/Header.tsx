@@ -139,12 +139,11 @@ export default function Header() {
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3 flex-shrink-0">
               <Image
-                src="https://congchungchaua.vn/wp-content/themes/asn/asset/images/logo.png"
+                src={logoImg}
                 alt="ASN – Công Chứng Châu Á"
                 width={140}
                 height={60}
                 className="h-10 w-auto object-contain brightness-0 invert"
-                unoptimized
               />
             </Link>
 

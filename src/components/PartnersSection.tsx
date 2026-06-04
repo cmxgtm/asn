@@ -1,51 +1,60 @@
 "use client";
 import { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
+import logoVib from "@/assets/img/vib-1.jpg";
+import logoTechcombank from "@/assets/img/Techcombank_logo.jpg";
+import logoVpbank from "@/assets/img/vpbank.jpg";
+import logoBidv from "@/assets/img/bidv.jpg";
+import logoOcb from "@/assets/img/ocb.jpg";
+import logoUob from "@/assets/img/uob.jpg";
+import logoOceanBank from "@/assets/img/oceabank-1.jpg";
+import logoBidc from "@/assets/img/bidc.jpg";
+import logoMb from "@/assets/img/Logo_MB_new.jpg";
 
 const partners = [
   {
     name: "VIB",
-    logo: "https://congchungchaua.vn/wp-content/uploads/2022/10/vib-1.jpg",
+    logo: logoVib,
     url: "https://www.vib.com.vn/",
   },
   {
     name: "Techcombank",
-    logo: "https://congchungchaua.vn/wp-content/uploads/2022/10/Techcombank_logo.jpg",
+    logo: logoTechcombank,
     url: "https://www.techcombank.com.vn/",
   },
   {
     name: "VPBank",
-    logo: "https://congchungchaua.vn/wp-content/uploads/2022/10/vpbank.jpg",
+    logo: logoVpbank,
     url: "https://www.vpbank.com.vn/",
   },
   {
     name: "BIDV",
-    logo: "https://congchungchaua.vn/wp-content/uploads/2022/10/bidv.jpg",
+    logo: logoBidv,
     url: "https://www.bidv.com.vn/",
   },
   {
     name: "OCB",
-    logo: "https://congchungchaua.vn/wp-content/uploads/2022/10/ocb.jpg",
+    logo: logoOcb,
     url: "#",
   },
   {
     name: "UOB",
-    logo: "https://congchungchaua.vn/wp-content/uploads/2022/10/uob.jpg",
+    logo: logoUob,
     url: "https://www.uob.com.vn/",
   },
   {
     name: "OceanBank",
-    logo: "https://congchungchaua.vn/wp-content/uploads/2020/08/oceabank-1.jpg",
+    logo: logoOceanBank,
     url: "https://www.oceanbank.vn/",
   },
   {
     name: "BIDC",
-    logo: "https://congchungchaua.vn/wp-content/uploads/2020/08/bidc.jpg",
+    logo: logoBidc,
     url: "https://bidc.com.vn/",
   },
   {
     name: "MBBank",
-    logo: "https://congchungchaua.vn/wp-content/uploads/2023/04/Logo_MB_new.jpg",
+    logo: logoMb,
     url: "#",
   },
 ];
